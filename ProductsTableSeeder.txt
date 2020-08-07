@@ -1,0 +1,248 @@
+
+
+        // SQL Insert
+        //  Electronics
+        Product::insert([
+            [
+                'name' => '42" LG HDTV',
+                'slug' => 'lg42Hdtv',
+                'categoryId' => '1',
+                'details' => '42" 1080p LCD TV - 16:9 - HDTV',
+                'price' => 4999.95,
+                'description' => 'Whatever room, whatever light, LGs 42 CS560 LCD television adjusts its picture to look crisp, clear, and glare-free! Its sharp pixel resolution at 1920 x 1080p yields a detailed picture while its fast refresh rate at 60 Hz ensures you wont miss a play in the basketball game. Surround sound matches that quality picture with quality sound. ',
+                'featured' => 1,
+                'image' => 'product-images/electronics/hdtv.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Zef Speaker System',
+                'slug' => 'zefSpeaker',
+                'categoryId' => '1',
+                'details' => 'Zef deluxe Speaker System',
+                'price' => 2999.95,
+                'description' => 'Model: T-1  Zef Speaker System 2.2 Ch 1000W PMPO 1 Year Guarantee.',
+                'featured' => 1,
+                'image' => 'product-images/electronics/zefSpeakerSystem.png',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Apple iPod Touch 8GB',
+                'slug' => 'ipod8gb',
+                'categoryId' => '1',
+                'details' => 'Apple iPod Touch 8GB (4th Generation) - Black',
+                'price' => 1999.95,
+                'description' => 'The world\'s most popular portable gaming device is even more fun. Now available in black and white, iPod touch includes iOS 5 with over 200 new features, like iMessage, Notification Center, and Twitter integration. Send free, unlimited text messages over Wi-Fi with iMessage. Record HD video and make FaceTime calls. Visit the App Store to choose from over 500,000 apps. iPod touch also features iCloud, which stores your music, photos, apps, and more.',
+                'featured' => 1,
+                'image' => 'product-images/electronics/ipadTouchMini.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ]
+        ]); //->categories()->attach(1);
+
+        // Apparel
+        Product::insert([
+            [
+                'name' => '14K Diamond Ring',
+                'slug' => 'diamondRing',
+                'categoryId' => '2',
+                'details' => 'Round Diamond Solitaire Ring in 14K White Gold',
+                'price' => 6999.95,
+                'description' => 'Say I love you with this stunning piece that will stun you if you are not careful. ',
+                'featured' => 1,
+                'image' => 'product-images/apparel/ring.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Zef Shirt',
+                'slug' => 'zefShirt',
+                'categoryId' => '2',
+                'details' => 'The Zef T-Shirt!',
+                'price' => 2999.95,
+                'description' => 'This KIEF shirt could make you the most popular kid on the block!',
+                'featured' => 1,
+                'image' => 'product-images/apparel/tShirt.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Socks',
+                'slug' => 'socks',
+                'categoryId' => '2',
+                'details' => 'White Socks 4 Pack',
+                'price' => 121.95,
+                'description' => 'This sock has cushioned sole for extra comfort with comfortable stay-up top. Our patented technology means quality you can trust.',
+                'featured' => 1,
+                'image' => 'product-images/apparel/socks.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+
+        ]); //->categories()->attach(2);
+
+        // Entertainment
+        Product::insert([
+            [
+                'name' => 'Movie Speaker System',
+                'slug' => 'movieSpeaker',
+                'categoryId' => '3',
+                'details' => 'Movie Theatre quality sound in your home!',
+                'price' => 2999.95,
+                'description' => 'Model: T-1  Zef Speaker System 2.2 Ch 1000W PMPO 1 Year Guarantee',
+                'featured' => 1,
+                'image' => 'product-images/electronics/zefSpeakerSystem.png',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Generic Movie',
+                'slug' => 'movie',
+                'categoryId' => '3',
+                'details' => 'Movie',
+                'price' => 99.95,
+                'description' => 'The most generic meta-movie you\'ll ever watch. Inspired by every drama movie ever made.',
+                'featured' => 1,
+                'image' => 'product-images/entertainement/genericMovie.png',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+
+        ]); //->categories()->attach(3);
+
+
+        // Toys
+        Product::insert([
+            [
+                'name' => 'Beach Ball',
+                'slug' => 'beachBall',
+                'categoryId' => '4',
+                'details' => 'Its round, colorful and full of air!.',
+                'price' => 19.95,
+                'description' => 'Branded 12 inch Beach Ball. Multicolor vinyl ball for Beach and outdoor play. ',
+                'featured' => 1,
+                'image' => 'product-images/toys/beachBall.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Hula Hoop',
+                'slug' => 'hulaHoop',
+                'categoryId' => '4',
+                'details' => 'Hulaaaa Hooooop!',
+                'price' => 19.95,
+                'description' => 'Let it go around and around!',
+                'featured' => 1,
+                'image' => 'product-images/toys/hulaHoop.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Kite',
+                'slug' => 'kite',
+                'categoryId' => '4',
+                'details' => 'If there is wind you can fly it!',
+                'price' => 99.95,
+                'description' => 'Made from high quality materials, tested for optimal flight.',
+                'featured' => 1,
+                'image' => '/product-images/toys/Kite.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+
+        ]); //->categories()->attach(4);
+
+
+        // Food
+        Product::insert([
+            [
+                'name' => 'Lemon Chicken',
+                'slug' => 'lemonChicken',
+                'categoryId' => '5',
+                'details' => 'Boneless, skinless chicken breast cutlets marinated in a delicious lemon herbal sauce.',
+                'price' => 45.95,
+                'description' => 'Cooking Instructions (From frozen): Grill or saute approximately 6 minutes per side or bake 25 minutes at 400°.',
+                'featured' => 1,
+                'image' => 'product-images/food/lemonChicken.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+        ]); //->categories()->attach(5);
+
+
+        // Books
+        Product::insert([
+            [
+                'name' => 'The Lion, the Witch and the Wardrobe',
+                'slug' => 'bookTheLion',
+                'categoryId' => '6',
+                'details' => 'The Lion, the Witch and the Wardrobe 1999 4th edition',
+                'price' => 92.95,
+                'description' => 'They open a door and enter a world.. ',
+                'featured' => 1,
+                'image' => 'product-images/books/lionWitch.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+        ]); //->categories()->attach(6);
+
+        // Furniture
+        Product::insert([
+            [
+                'name' => 'Desk Lamp',
+                'slug' => 'deskLamp',
+                'categoryId' => '7',
+                'details' => '42" 1080p LCD TV - 16:9 - HDTV',
+                'price' => 35.45,
+                'description' => 'Product materials: Shade: Paper Tube/ Base plate: Steel, Brush finish nickel-plated, Clear lacquer.',
+                'featured' => 1,
+                'image' => 'product-images/furniture/deskLamp.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+        ]); //->categories()->attach(7);
+
+        // Stationery
+        Product::insert([
+            [
+                'name' => 'Ball Point Pen',
+                'slug' => 'pen',
+                'categoryId' => '8',
+                'details' => 'Ball Point Pens (7 pack)',
+                'price' => 21.95,
+                'description' => 'A pen can be mightier than a sword! Start writing today.',
+                'featured' => 1,
+                'image' => 'product-images/stationery/ballPointPens.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+            [
+                'name' => 'Paper Roll',
+                'slug' => 'paperRoll',
+                'categoryId' => '8',
+                'details' => 'Thick paper roll',
+                'price' => 9.95,
+                'description' => 'High quality paper made from real trees!',
+                'featured' => 1,
+                'image' => 'product-images/stationery/paperRoll.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ],
+        ]); //->categories()->attach(8);
+           $now = Carbon::now()->toDateTimeString();
+        // Flowers
+        Product::insert([
+            [
+                'name' => 'Roses',
+                'slug' => 'roses',
+                'categoryId' => '9',
+                'details' => 'Beautiful roses to brighten anyones day!',
+                'price' => 19.95,
+                'description' => 'Handpicked, professionully decorated!',
+                'featured' => 1,
+                'image' => 'product-images/electronics/hdtv.jpg',
+                'created_at' => $now,
+                'updated_at' => $now
+            ]
+        ])->categories()->attach(9);

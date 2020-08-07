@@ -1,0 +1,69 @@
+.checkout-wrapper {
+    width: 80%;
+    margin: 1rem 10%;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+.checkout-section {
+    display: flex;
+    flex-direction: row;
+    min-height: 800px;
+    text-align: center;
+    width: 100%;
+}
+.checkout-form-section,
+.checkout-order-section {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    width: 50%;
+    padding: 2rem;
+}
+// Checkout Form Styles Start
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+}
+.checkout-form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.checkout-half-form-group {
+    display: flex;
+    flex-direction: row;
+}
+.checkout-form-button {
+}
+.checkout-form-button:disabled {
+    background-color: lightgrey;
+    cursor: not-allowed;
+}
+// Stripe
+.StripeElement {
+    background-color: white;
+    padding: 1rem;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#card-errors {
+    color: #fa755a;
+}

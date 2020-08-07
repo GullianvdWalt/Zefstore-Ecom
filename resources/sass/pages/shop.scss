@@ -1,0 +1,103 @@
+.shop-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 1200px;
+}
+aside {
+    margin: 1rem;
+    width: 20%;
+}
+.category-header {
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+}
+aside ul {
+    display: block;
+}
+aside ul li {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    font-family: "Roboto", sans-serif;
+}
+.shop-container aside ul li.active {
+    font-weight: 800;
+}
+aside ul li a {
+    color: #333333;
+    text-shadow: none;
+}
+.category-icon {
+    max-width: 50px;
+    max-height: 50px;
+}
+.category-product-section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+.category-product-heading-container {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 1rem 5%;
+}
+.category-products-heading {
+    font-size: 1.9rem;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 4px;
+    text-align: left;
+}
+.category-heading-line {
+    border: 2px solid #ff0000;
+}
+
+.category-products-container {
+    height: 90%;
+    margin: 2rem;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+}
+.category-products-heading {
+    text-align: center;
+}
+.product-container {
+    background: #ffffff;
+    border: 3px solid #9c9c9c;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    text-align: center;
+    padding: 1rem;
+}
+.product-name {
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+.product-image img {
+    max-width: 250px;
+    max-height: 160px;
+}
+// Featured Section Style End
+.pagination-container {
+    text-align: center;
+    width: 100%;
+}
+.pagination {
+    width: 50%;
+    margin: 1rem 25%;
+}

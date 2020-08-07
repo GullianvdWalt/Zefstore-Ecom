@@ -1,0 +1,318 @@
+/* General Styles for all page */
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto&display=swap");
+/*
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+.nav-link a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    letter-spacing: 4px;
+}
+.nav-link a:hover {
+    color: #ff0000;
+}
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 42px;
+    color: #fff;
+}
+h2 {
+    font-family: "Open Sans", sans-serif;
+}
+span {
+    color: #ff0000;
+    text-transform: uppercase;
+}
+// Style Header Start
+header {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+// Style Nav Start
+.top-nav-container {
+    margin: 0;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.logo {
+    text-align: left;
+    display: flex;
+    width: 20%;
+}
+.logo-image {
+    width: 250px;
+    height: 60px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.nav-top-container {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+}
+li img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+// Style Cart and Account Top
+.cart-button-top {
+    display: inline-block;
+    text-decoration: none;
+    border: 3px solid #ff0000;
+    color: #ff0000;
+    border-radius: 20px;
+    text-align: center;
+    margin-right: 40px;
+    padding: 1rem;
+    width: auto;
+    height: 70px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.cart-count {
+    color: #ff0000;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.cart-button-top span .material-icons {
+    font-size: 45px;
+}
+.account-button-top {
+    border: 3px solid #ff0000;
+    background-color: none;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 20px;
+    text-align: center;
+    width: 140px;
+    height: 70px;
+    margin-right: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.account-button-top {
+    width: 235px;
+}
+.account-button-top span {
+    font-size: 45px;
+    padding: 0.2rem;
+    vertical-align: middle;
+}
+.account-button-top:hover {
+    cursor: pointer;
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.account-button-top a {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+/* Account Dropdown Menu Button */
+.dropbtn {
+    border: none;
+    background-color: none;
+    font-size: 1.3rem;
+    color: #ff0000;
+    outline: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    outline: none;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ff0000;
+    color: #fff;
+}
+// Style Nav End
+// Style Hero Section
+.hero-container {
+    width: 100%;
+    min-height: 1366px;
+    text-align: center;
+    padding: 1rem;
+}
+.hero-heading {
+    width: 80%;
+    margin: 1rem 10% 1rem 10%;
+    text-align: center;
+}
+h1 {
+    letter-spacing: 10px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+// Style Header End
+// Featured Section Style Start
+.featured-section {
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+.feauture-section-line {
+    width: 50%;
+    margin: 1rem 25%;
+    border: 2px solid #ff0000;
+    border-radius: 20px;
+}
+.home-featured-products-container {
+    margin: 2rem;
+    padding: 4rem;
+    background: #f0f0f0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px 50px;
+}
+.home-product-container {
+    background: #ffffff;
+    border: 3px solid #9c9c9c;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 1rem;
+}
+.home-product-container img {
+    max-width: 250px;
+    max-height: 250px;
+}
+.product-name {
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    text-shadow: none;
+    font-weight: normal;
+}
+// Featured Section Style End
+.view-products-button-container {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 6rem;
+    text-align: center;
+}
+.view-products-button {
+    width: 20%;
+    margin: 1rem 40%;
+    padding: 1rem;
+}
+
+.view-product-link {
+    color: #ff0000;
+    text-shadow: none;
+    border: 3px solid #ff0000;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-decoration: none;
+}
+.view-product-link:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+footer {
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    height: 140px;
+    background-color: #ff0000;
+    color: #f1f1f1;
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+.footer-link {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+// Spacer Div
+.spacer {
+    margin-bottom: 30px;
+}
+
+// Pages
+@import "pages/shop.scss";
+@import "pages/product.scss";
+@import "pages/cart.scss";
+@import "pages/checkout.scss";
+@import "pages/thankyou.scss";
+// Components
+@import "components/breadcrums.scss";
+@import "components/might-like.scss";
+
+a:hover {
+    cursor: pointer;
+}
