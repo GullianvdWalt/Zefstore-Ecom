@@ -20,7 +20,8 @@
     <!-- Product Image Section Start -->
     <div class="product-image-container">
         <div class="product-main-image">
-            <img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="main-image">
+            <img src="{{ productImage($product->image_url) }}" alt="product" class="main-image">
+            {{-- <img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="main-image"> --}}
         </div>
         <div class="product-thumbnail-container">
             <div class="thumbnail-container"><img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="thumbnail-image"></div>

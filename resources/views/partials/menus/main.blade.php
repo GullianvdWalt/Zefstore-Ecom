@@ -1,10 +1,10 @@
 
 
     <div class="menu-container">
-        <ul>
+        <ul class="menu-nav-links">
          @foreach($items as $menu_item)
-            <li class="nav-link">
-                <a href="{{ $menu_item->link() }}">
+            <li class="menu-nav-links-item">
+                <a href="{{ $menu_item->link() }}" class="menu-nav-links-item-link">
                  {{ $menu_item->title }}
                 @if ($menu_item->title === 'Cart')
                     @if (Cart::instance('default')->count() > 0)

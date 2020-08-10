@@ -7,7 +7,7 @@
             <a href="{{ route('shop.show', $product->slug) }}" class="might-like-product">
                 <div>
                     <!-- Product iamge -->
-                     <img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="might-like-product-image">
+                     <img src="{{ productImage($product->image_url) }}" alt="product" class="might-like-product-image">
                 </div>
                 <div>
                         <!-- Product Names -->

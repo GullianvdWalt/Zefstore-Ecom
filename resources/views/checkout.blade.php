@@ -116,7 +116,7 @@
                 {{-- Checkout  Product Details Row Start --}}
                 <div class="checkout-order-row">
                     <div class="checkout-order-product-image-container">
-                        <img src="{{ asset('assets/img/'.$item->model->image)}}" alt="item" class="checkout-order-product-image">
+                        <img src="{{ productImage($product->image_url) }}"" alt="item" class="checkout-order-product-image">
                     </div>
                     <div class="checkout-order-product-details-container">
                         <div class="checkout-order-product-name"><p>{{ $item->model->name }}</p></div>

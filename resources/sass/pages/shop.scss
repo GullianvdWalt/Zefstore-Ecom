@@ -13,21 +13,31 @@ aside {
     font-family: "Roboto", sans-serif;
     font-size: 1.4rem;
 }
-aside ul {
-    display: block;
+.categories-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1rem;
+    padding: 2rem;
 }
-aside ul li {
-    margin-top: 2rem;
-    margin-left: 2rem;
-    font-size: 1.3rem;
-    font-family: "Roboto", sans-serif;
+.categories-menu-item {
 }
 .shop-container aside ul li.active {
     font-weight: 800;
 }
-aside ul li a {
+.categories-menu-item-link {
     color: #333333;
     text-shadow: none;
+    letter-spacing: 2px;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding: 20px 5px;
+    font-size: 1.3rem;
+    font-family: "Roboto", sans-serif;
+}
+.categories-menu-item-link:hover {
+    color: #ff0000;
 }
 .category-icon {
     max-width: 50px;
@@ -79,6 +89,7 @@ aside ul li a {
     border-radius: 15px;
     text-align: center;
     padding: 1rem;
+    max-height: 400px;
 }
 .product-name {
     color: black;
@@ -91,6 +102,7 @@ aside ul li a {
 .product-image img {
     max-width: 250px;
     max-height: 160px;
+    background-color: #ffffff;
 }
 // Featured Section Style End
 .pagination-container {

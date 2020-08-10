@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             // Produt Description
             $table->text('description');
             $table->boolean('featured')->default(false)->nullable();
-            $table->string('image')->default('product-images/no-image.jpeg')->nullable();
+            $table->string('image')->default('products\August2020\no-image.jpeg')->nullable();
             $table->timestamps();
         });
     }
