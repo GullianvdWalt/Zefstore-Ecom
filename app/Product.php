@@ -10,7 +10,7 @@ class Product extends Model
     {
 
         // Define relationship
-        return $this->belongsToMany('App\Categories');
+        return $this->belongsToMany('App\Category');
     }
 
     public function presentPrice()

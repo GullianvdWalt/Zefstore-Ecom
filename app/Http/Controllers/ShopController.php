@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use App\Categories;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -19,7 +19,7 @@ class ShopController extends Controller
         // Pagination Number of products per page
         $pagination = 9;
         // Get All Categories for asside category nav
-        $categories = Categories::all();
+        $categories = Category::all();
 
         // Query String
         if (request()->category) {

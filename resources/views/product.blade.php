@@ -46,7 +46,7 @@
         </div>
         <div class="product-descritpion-container">
             <p class="product-description">
-                    {{ $product->description}}
+                    {!! $product->description !!}
             </p>
         </div>
         <p>&nbsp;</p>
