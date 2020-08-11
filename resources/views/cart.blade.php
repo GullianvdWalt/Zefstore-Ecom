@@ -50,7 +50,7 @@
         <div class="cart-item-container">
             <div class="cart-row-left">
                 {{-- Model is the Product Model --}}
-                <div> <a href="{{route('shop.show', $item->model->slug)}}"><img src="{{ productImage($product->image_url) }}"" alt="item" class="cart-img"></a></div>
+                <div> <a href="{{route('shop.show', $item->model->slug)}}"><img src="{{ productImage($item->model->image_url) }}" alt="item" class="cart-img"></a></div>
                 <div class="cart-item-details-col">
                     <div class="cart-product-name"><a href="{{route('shop.show', $item->model->slug)}}">{{$item->model->name}}</a></div>
                     <div class="cart-product-details">{{ $item->model->details }}</div>

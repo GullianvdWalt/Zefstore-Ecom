@@ -35,7 +35,11 @@
         <h3 class="category-header">By Category</h3>
         <ul class="categories-menu">
         @foreach ($categories as $category)
-            <li class="{{ setActiveCategory($category->slug) }}" class="categories-menu-item"><a href="{{ route('shop.index',['category'=>$category->slug]) }}" class="categories-menu-item-link"><img src="{{ asset('storage/'.$category->icon)}}" alt="category" class="category-icon"> {{ $category->name }}</a></li>
+            <li class="{{ setActiveCategory($category->slug) }}" class="categories-menu-item">
+                <a href="{{ route('shop.index',['category'=>$category->slug]) }}" class="categories-menu-item-link">
+                     <img src="{{ asset('storage/'.$category->icon)}}" alt="category" class="category-icon"> {{ $category->name }}
+                </a>
+            </li>
          @endforeach
      </ul>
     </aside>
@@ -58,8 +62,8 @@
             <div class="category-products-container">
 
                 @forelse ($products as $product)
-                                    <div class="product-container">
-                    <div class="product-image"><a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image_url) }}" alt="product" class="main-image"></a></div>
+                <div class="product-container">
+                    <div class="shop-product-image-container"><a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image_url) }}" alt="product" class="shop-main-image"></a></div>
                     <div class="product-name"><a href="{{ route('shop.show', $product->slug) }}" class="product-name">
                             <p>{{ $product->name }}</p>
                         </a></div>

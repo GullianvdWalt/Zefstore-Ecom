@@ -32,8 +32,11 @@ Route::post('/voucher', 'VouchersController@store')->name('voucher.store');
 Route::delete('/voucher', 'VouchersController@destroy')->name('voucher.destroy');
 
 //Checkout
-Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+// Guest Checkout
+Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
 
 // Confimration
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
@@ -42,3 +45,7 @@ Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.inde
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

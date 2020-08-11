@@ -36,12 +36,11 @@ header {
 }
 
 .top-nav-container {
+  display: flex;
+  flex-direction: row;
   margin: 0;
   height: 20%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 2rem;
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -61,23 +60,30 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.menu-container {
+.menu-container,
+.nav-menu-right {
   width: 30%;
-  margin: 0 45% 0 5%;
+  margin: 0 10%;
 }
 
-.menu-nav-links {
+.menu-container li,
+.nav-menu-right li {
+  margin-right: 35px;
+}
+
+.menu-container li:last-child,
+.nav-menu-right li:last-child {
+  margin-right: 0;
+}
+
+.menu-nav-links,
+.nav-menu-right-items {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
   text-align: center;
   margin: 0;
   padding: 0;
-}
-
-.menu-nav-links-item {
-  list-style: none;
 }
 
 li {
@@ -93,14 +99,16 @@ li img {
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.menu-nav-links-item-link {
+.menu-nav-links-item-link,
+.nav-menu-right-item-link {
   text-decoration: none;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 22px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .menu-nav-links-item-link:hover {
@@ -384,7 +392,7 @@ aside {
 }
 
 .categories-menu-item-link {
-  color: #333333;
+  color: #333;
   text-shadow: none;
   letter-spacing: 2px;
   display: inline-block;
@@ -448,13 +456,16 @@ aside {
 }
 
 .product-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
   background: #ffffff;
   border: 3px solid #9c9c9c;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
-  text-align: center;
-  padding: 1rem;
   max-height: 400px;
 }
 
@@ -466,10 +477,18 @@ aside {
   font-weight: normal;
 }
 
-.product-image img {
-  max-width: 250px;
-  max-height: 160px;
-  background-color: #ffffff;
+.shop-product-image-container {
+  width: 100%;
+  padding: 10px;
+  height: 250px;
+  text-align: center;
+}
+
+.shop-main-image {
+  max-width: 200px;
+  max-height: 200px;
+  background-color: #fff;
+  text-align: center;
 }
 
 .pagination-container {
@@ -485,14 +504,17 @@ aside {
 .product-view-container {
   display: flex;
   flex-direction: row;
-  min-height: 800px;
+  justify-content: center;
+  min-height: 900px;
   margin-top: 4rem;
   margin-bottom: 4rem;
+  padding: 1rem;
 }
 
 .product-image-container,
 .product-information-container {
   width: 50%;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -503,38 +525,59 @@ aside {
 .product-image-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .product-main-image {
-  height: 80%;
-  margin: 1rem;
-  text-align: center;
+  width: 500px;
+  height: 500px;
+  margin: 1rem 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #979797;
-  padding: 30px;
+  padding: 2rem;
   text-align: center;
   border-radius: 10px;
 }
 
+.product-main-image .main-image.active {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.product-main-image .main-image.active {
+  opacity: 1;
+}
+
 .main-image {
-  max-width: 500px;
-  max-width: 500px;
+  height: 80%;
+  width: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: grey;
 }
 
-.product-thumbnail-container {
-  height: 20%;
+.product-images-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 20px;
   width: 80%;
-  margin: 1rem 10%;
+  margin: 20px 10% 0 10%;
+}
+
+.thumbnail-container {
   display: flex;
-  flex-direction: row;
-  height: 20%;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgray;
+  min-height: 66px;
+  cursor: pointer;
+}
+
+.thumbnail-container:hover {
+  border: 1px solid #979797;
 }
 
 .thumbnail-image {

@@ -20,11 +20,13 @@
     <!-- Product Image Section Start -->
     <div class="product-image-container">
         <div class="product-main-image">
-            <img src="{{ productImage($product->image_url) }}" alt="product" class="main-image">
-            {{-- <img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="main-image"> --}}
+            <img src="{{ productImage($product->image_url) }}" alt="product" class="main-image active" id="currentImage">
         </div>
         {{-- Product Images --}}
-        <div class="product-thumbnail-container">
+        <div class="product-images-container">
+                <div class="thumbnail-container selected">
+                        <img src="{{ productImage($product->image_url) }}"  alt="product-thumbnail" class="thumbnail-image">
+                </div>
             @if ($product->images)
                         {{-- Array From DB of Product Imagess --}}
                      @foreach (json_decode($product->images, true) as $image)
@@ -68,4 +70,26 @@
     <!-- Product Information Section End -->
 </div>
 @include('partials.might-like')
+@endsection
+
+@section('extra-js')
+<script>
+    (function(){
+        // Declare Variables
+        const currentImage = document.querySelector('#currentImage');
+        // Get Thumbnail Images
+        const images = document.querySelectorAll('.thumbnail-container');
+        // Add Event Listener
+        images.forEach((element) => element.addEventListener('click', thumbnailClick));
+        // Event Listener
+       function thumbnailClick(e){
+            currentImage.src = this.querySelector('img').src;
+
+
+            images.forEach((element) => element.classList.remove('selected'));
+            this.classList.add('selected');
+        }
+
+    })();
+</script>
 @endsection

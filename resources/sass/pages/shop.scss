@@ -26,7 +26,7 @@ aside {
     font-weight: 800;
 }
 .categories-menu-item-link {
-    color: #333333;
+    color: #333;
     text-shadow: none;
     letter-spacing: 2px;
     display: inline-block;
@@ -82,13 +82,16 @@ aside {
     text-align: center;
 }
 .product-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
     background: #ffffff;
     border: 3px solid #9c9c9c;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    text-align: center;
-    padding: 1rem;
     max-height: 400px;
 }
 .product-name {
@@ -98,11 +101,17 @@ aside {
     text-shadow: none;
     font-weight: normal;
 }
-
-.product-image img {
-    max-width: 250px;
-    max-height: 160px;
-    background-color: #ffffff;
+.shop-product-image-container {
+    width: 100%;
+    padding: 10px;
+    height: 250px;
+    text-align: center;
+}
+.shop-main-image {
+    max-width: 200px;
+    max-height: 200px;
+    background-color: #fff;
+    text-align: center;
 }
 // Featured Section Style End
 .pagination-container {

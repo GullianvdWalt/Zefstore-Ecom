@@ -22,6 +22,11 @@ class CheckoutController extends Controller
         if (Cart::instance('default')->count() == 0) {
             return redirect()->route('shop.index');
         }
+        // If the user is logged in or continue as guest, redirect to checout
+        if (auth()->user() && request()->this('guestCheckout')) {
+            return redirect()->route('checkout.index');
+        }
+
         return view('checkout')->with([
             'discount' => $this->getNumbers()->get('discount'),
             'newSubtotal' =>  $this->getNumbers()->get('newSubtotal'),

@@ -21,9 +21,14 @@
     <header>
         <!-- Top-nav-container-Start -->
         <div class="top-nav-container" style="background-image: url('{{asset('assets/img/carbon-background.png')}}');">
-            <div class="logo"><img src="assets/img/ZefStoreLogoMedium.png" alt="logo" class="logo-image"></div>
+            <div class="logo">
+                <a href="/"> <img src="assets/img/ZefStoreLogoMedium.png" alt="logo" class="logo-image"></a>
+            </div>
             <!-- Menu Nav Start -->
                 {{ menu('main','partials.menus.main') }}
+            <div class="nav-menu-right">
+                    @include('partials.menus.main-right')
+            </div>
         </div>
         <!-- Menu Nav End -->
         </div>

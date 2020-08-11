@@ -29,7 +29,7 @@
         <div class="error-message">
             <ul>
                 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>{!! $error !!}</li>
                 @endforeach
             </ul>
         </div>
@@ -49,7 +49,11 @@
                     <h3 class="checkout-form-heading">Billing Details</h3>
                     <div class="checkout-form-group">
                         <label for="email" class="checkout-form-label">Email Address</label>
-                        <input type="text" id="email" name="email" class="checkout-form-input" value="{{ old('email') }}" required>
+                        @if(auth()->user())
+                        <input type="text" id="email" name="email" class="checkout-form-input" value="{{ auth()->user()->email }}" readonly>
+                        @else
+                         <input type="text" id="email" name="email" class="checkout-form-input" value="{{ old('email') }}" required>
+                        @endif
                     </div>
                     <div class="checkout-form-group">
                         <label for="fullName" class="checkout-form-label">Name & Surname</label>
@@ -116,7 +120,7 @@
                 {{-- Checkout  Product Details Row Start --}}
                 <div class="checkout-order-row">
                     <div class="checkout-order-product-image-container">
-                        <img src="{{ productImage($product->image_url) }}"" alt="item" class="checkout-order-product-image">
+                        <img src="{{ productImage($item->model->image_url) }}" alt="item" class="checkout-order-product-image">
                     </div>
                     <div class="checkout-order-product-details-container">
                         <div class="checkout-order-product-name"><p>{{ $item->model->name }}</p></div>
