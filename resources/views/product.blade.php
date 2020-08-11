@@ -23,11 +23,16 @@
             <img src="{{ productImage($product->image_url) }}" alt="product" class="main-image">
             {{-- <img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="main-image"> --}}
         </div>
+        {{-- Product Images --}}
         <div class="product-thumbnail-container">
-            <div class="thumbnail-container"><img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="thumbnail-image"></div>
-            <div class="thumbnail-container"><img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="thumbnail-image"></div>
-            <div class="thumbnail-container"><img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="thumbnail-image"></div>
-            <div class="thumbnail-container"><img src="{{ asset('assets/img/'.$product->image)}}" alt="product" class="thumbnail-image"></div>
+            @if ($product->images)
+                        {{-- Array From DB of Product Imagess --}}
+                     @foreach (json_decode($product->images, true) as $image)
+                    <div class="thumbnail-container">
+                        <img src="{{ productImage($image) }}"  alt="product-thumbnail" class="thumbnail-image">
+                    </div>
+                    @endforeach
+            @endif
         </div>
     </div>
     <!-- Product Image Section End -->
