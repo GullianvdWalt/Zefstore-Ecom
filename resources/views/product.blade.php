@@ -15,6 +15,25 @@
 </span>
 <span>{{ $product->name }}</span>
 @endcomponent
+    <div class="message-container">
+        <!-- Check for message -->
+        @if (session()->has('success_message'))
+        <div class="alert-message-container">
+            <p> {{ session()->get('success_message') }}</p>
+        </div>
+        @endif
+        <!-- Check for errors -->
+        @if(count($errors) > 0)
+        <div class="error-message">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
+
 <!-- Product View Start -->
 <div class="product-view-container">
     <!-- Product Image Section Start -->

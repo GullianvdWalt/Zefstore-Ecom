@@ -76,4 +76,27 @@ class ShopController extends Controller
             'mightAlsoLike' => $mightAlsoLike,
         ]);
     }
+
+    public function search(Request $request)
+    {
+        // Minimum of three characters for searching
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+
+        $query = $request->input('query');
+
+        // // Search Query
+        // // Search By Name
+        // $products = Product::where('name', 'like', "%$query%")
+        //     // Search By Details
+        //     ->orWhere('details', 'like', "%$query%")
+        //     // Search By Description
+        //     ->orWhere('description', 'like', "%$query%")->paginate(10);
+
+        $products = Product::search($query)->paginate(10);
+
+        // Return search results to the view
+        return view('search-results')->with('products', $products);
+    }
 }
