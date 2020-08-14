@@ -57,7 +57,7 @@
                     </div>
                     <div class="checkout-form-group">
                         <label for="fullName" class="checkout-form-label">Name & Surname</label>
-                        <input type="text" id="fullName" name="fullName" class="checkout-form-input"  value="{{ old('fullName') }}" required>
+                        <input type="text" id="fullname" name="fullName" class="checkout-form-input"  value="{{ old('fullName') }}" required>
                     </div>
                     <div class="checkout-form-group">
                         <label for="address" class="checkout-form-label">Address</label>

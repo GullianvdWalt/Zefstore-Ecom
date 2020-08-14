@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutRequest;
+use App\Mail\OrderPlaced;
+use App\Order;
 use App\Product;
+use App\OrderProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
-
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -23,7 +26,7 @@ class CheckoutController extends Controller
             return redirect()->route('shop.index');
         }
         // If the user is logged in or continue as guest, redirect to checout
-        if (auth()->user() && request()->this('guestCheckout')) {
+        if (auth()->user() && request()->is('guestCheckout')) {
             return redirect()->route('checkout.index');
         }
 
@@ -75,6 +78,8 @@ class CheckoutController extends Controller
                 ],
             ]);
 
+            $order = $this->addToOrdersTable($request, null);
+            Mail::send(new OrderPlaced($order));
             // Successfull
             // Destroy Cart Items
             Cart::instance('default')->destroy();
@@ -82,14 +87,48 @@ class CheckoutController extends Controller
             session()->forget('voucher');
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your pament has been received!');
         } catch (CardErrorException $e) {
+            $this->addToOrdersTable($request,  $e->getMessage());
             return back()->withErrors('Error! ' . $e->getMessage());
         }
+    }
+
+    protected function addToOrdersTable($request, $error)
+    {
+        // Insert Into orders table
+        $order = Order::create([
+            'user_id' => auth()->user() ? auth()->user()->id : null,
+            'billing_email' => $request->email,
+            'billing_fullname' => $request->name,
+            'billing_address' => $request->address,
+            'billing_city' => $request->city,
+            'billing_province' => $request->province,
+            'billing_postalcode' => $request->postalcode,
+            'billing_phone' => $request->phone,
+            'billing_name_on_card' => $request->name_on_card,
+            'billing_discount' => $this->getNumbers()->get('discount'),
+            'billing_discount_code' => $this->getNumbers()->get('code'),
+            'billing_subtotal' => $this->getNumbers()->get('newSubtotal'),
+            'billing_tax' => $this->getNumbers()->get('newTax'),
+            'billing_total' => $this->getNumbers()->get('newTotal'),
+            'error' => $error,
+        ]);
+        // Insert into pivot table order_product
+        foreach (Cart::content() as $item) {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $item->model->id,
+                'quantity' => $item->qty,
+            ]);
+        }
+
+        return $order;
     }
 
     private function getNumbers()
     {
         $tax = config('cart.tax') / 100;
         $discount = session()->get('voucher')['discount'] ?? 0;
+        $code = session()->get('voucher')['name'] ?? null;
         $newSubtotal = ((Cart::subtotal()) - $discount);
         $newTax = $newSubtotal * $tax;
         $newTotal = $newSubtotal * (1 + $tax);
@@ -97,6 +136,7 @@ class CheckoutController extends Controller
         return collect([
             'tax' => $tax,
             'discount' => $discount,
+            'code' => $code,
             'newSubtotal' => $newSubtotal,
             'newTax' => $newTax,
             'newTotal' => $newTotal
