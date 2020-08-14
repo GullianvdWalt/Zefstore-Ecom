@@ -4,7 +4,7 @@ use phpDocumentor\Reflection\Types\Float_;
 // Price
 function presentPrice($price)
 {
-    return 'R' . number_format($price, 2);
+    return 'R' . (number_format($price, 2)) / 1000;
 }
 
 // Set Category link active
