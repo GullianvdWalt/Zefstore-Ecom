@@ -44,7 +44,7 @@ class Product extends Model
     public function presentPrice()
     {
 
-        return 'R' . number_format($this->price, 2);
+        return 'R' . number_format($this->price / 100, 2);
     }
 
     // Query for You Might Also Like Products Section

@@ -69,7 +69,7 @@
             <p class="product-details"> {{ $product->details}}</p>
         </div>
         <div class="product-price-container">
-            <p class="product-price"> {{ $product->presentPrice() }}</p>
+            <p class="product-price"> {{ ($product->presentPrice()) }}</p>
         </div>
         <div class="product-descritpion-container">
             <p class="product-description">
