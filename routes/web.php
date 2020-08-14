@@ -49,3 +49,13 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Mail
+Route::get('/mailable', function () {
+    $order = App\Order::find(1);
+
+    return new App\mail\OrderPlaced($order);
+});
+
+// Search
+Route::get('/search', 'ShopController@search')->name('search');
