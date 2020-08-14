@@ -227,24 +227,26 @@ h1 {
 // Featured Section Style Start
 .featured-section {
     text-align: center;
-    margin-top: 1rem;
+    width: 80%;
+    margin: 1rem 10%;
+    padding: 1rem;
+}
+.featured-section-head {
     width: 100%;
+    padding: 20px;
 }
 .feauture-section-line {
-    width: 50%;
-    margin: 1rem 25%;
+    width: 40%;
+    margin: 1rem 30%;
     border: 2px solid #ff0000;
     border-radius: 20px;
 }
 .home-featured-products-container {
     margin: 2rem;
     padding: 4rem;
-    background: #f0f0f0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px 50px;
+    grid-gap: 50px 80px;
 }
 .home-product-container {
     background: #ffffff;
@@ -254,9 +256,9 @@ h1 {
     border-radius: 15px;
     padding: 1rem;
 }
-.home-product-container img {
-    max-width: 250px;
-    max-height: 250px;
+.product-image .main-image {
+    width: 150px;
+    height: 150px;
 }
 .product-name {
     color: black;
@@ -267,26 +269,26 @@ h1 {
 }
 // Featured Section Style End
 .view-products-button-container {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 6rem;
-    text-align: center;
+    width: 80%;
+    margin: 1rem 10%;
+    padding: 30px;
+    justify-content: center;
 }
 .view-products-button {
-    width: 20%;
-    margin: 1rem 40%;
-    padding: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
 .view-product-link {
+    width: 450px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid #ff0000;
     color: #ff0000;
     text-shadow: none;
-    border: 3px solid #ff0000;
-    border-radius: 20px;
     font-family: "Open Sans", sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
-    padding: 1rem;
     text-decoration: none;
 }
 .view-product-link:hover {

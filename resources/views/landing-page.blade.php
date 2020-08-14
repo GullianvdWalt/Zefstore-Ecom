@@ -52,7 +52,7 @@
         <div class="home-featured-products-container">
             @foreach ($products as $product)
             <div class="home-product-container">
-                <div class="product-image"><a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image_url) }}"" alt="product" class="main-image"></a></div>
+                <div class="product-image"><a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image_url) }}" alt="product" class="main-image"></a></div>
                 <div class="product-name"><a href="{{ route('shop.show', $product->slug) }}" class="product-name">
                         <p>{{ $product->name }}</p>
                     </a></div>
