@@ -215,8 +215,11 @@
             element.addEventListener('change', function(){
                 // Get Selector id
               const id = element.getAttribute('data-id');
+              const productQuantity = element.getAttribute('data-productQuantity');
+
               axios.patch(`/cart/${id}`, {
-                    quantity: this.value
+                    quantity: this.value,
+                    productQuantity: productQuantity
                 })
                 .then(function (response) {
                     //console.log(response);

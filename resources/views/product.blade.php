@@ -63,7 +63,7 @@
             <h3 class="product-title">{{ $product->name }}</h3>
         </div>
         <div class="product-status-container">
-            <h4 class="product-status">In Stock</h4>
+            {!! $stockLevel !!}
         </div>
         <div class="product-details-container">
             <p class="product-details"> {{ $product->details}}</p>
@@ -77,13 +77,14 @@
             </p>
         </div>
         <p>&nbsp;</p>
-        <!-- Add To Cart Button -->
-        <form action="{{ route('cart.store', $product) }}" method="POST">
-            <!-- Prevents  cross-site request forgery attacks -->
-            {{ csrf_field() }}
-            <button type="submit" class="add-to-cart-button">Add To Cart</button>
-        </form>
-
+        @if($product->quantity > 0)
+            <!-- Add To Cart Button -->
+            <form action="{{ route('cart.store', $product) }}" method="POST">
+                <!-- Prevents  cross-site request forgery attacks -->
+                {{ csrf_field() }}
+                <button type="submit" class="add-to-cart-button">Add To Cart</button>
+            </form>
+        @endif
 
     </div>
     <!-- Product Information Section End -->
