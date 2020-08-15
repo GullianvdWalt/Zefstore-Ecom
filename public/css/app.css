@@ -482,14 +482,15 @@ aside {
 
 .shop-product-image-container {
   width: 100%;
-  padding: 10px;
+  padding: 30px;
   height: 250px;
   text-align: center;
 }
 
 .shop-main-image {
-  max-width: 200px;
-  max-height: 200px;
+  margin: 0;
+  width: 150px;
+  height: 150px;
   background-color: #fff;
   text-align: center;
 }
@@ -1109,5 +1110,57 @@ a:hover {
   color: #23527c;
   background-color: #eee;
   border-color: #ddd;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.badge-light {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
 }
 

@@ -20,8 +20,6 @@ aside {
     margin: 1rem;
     padding: 2rem;
 }
-.categories-menu-item {
-}
 .shop-container aside ul li.active {
     font-weight: 800;
 }
@@ -103,13 +101,14 @@ aside {
 }
 .shop-product-image-container {
     width: 100%;
-    padding: 10px;
+    padding: 30px;
     height: 250px;
     text-align: center;
 }
 .shop-main-image {
-    max-width: 200px;
-    max-height: 200px;
+    margin: 0;
+    width: 150px;
+    height: 150px;
     background-color: #fff;
     text-align: center;
 }
