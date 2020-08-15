@@ -2,8 +2,8 @@
 // VoucherController File
 namespace App\Http\Controllers;
 
+use App\Jobs\UpdateVoucher;
 use App\Voucher;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class VouchersController extends Controller
@@ -24,10 +24,8 @@ class VouchersController extends Controller
             return redirect()->route('cart.index')->withErrors('Invalid Voucher Code!');
         }
 
-        session()->put('voucher', [
-            'name' => $voucher->code,
-            'discount' => $voucher->discount(Cart::subtotal())
-        ]);
+        dispatch_now(new UpdateVoucher($voucher));
+
         return redirect()->route('cart.index')->with('success_message', 'Voucher Has Been Applied!');
     }
 
