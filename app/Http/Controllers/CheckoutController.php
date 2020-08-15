@@ -56,7 +56,10 @@ class CheckoutController extends Controller
      */
     public function store(CheckoutRequest $request)
     {
-
+        // Check for product quantity when two or more users orders at the same time. (Race Condition)
+        if ($this->productsNoLongerAvailible()) {
+            return back()->withErrors('Sorry! One of the items in your cart is no longer availible.');
+        }
         try {
             $contents = Cart::content()->map(function ($item) {
                 return $item->model->slug . ',' . $item->qty;
@@ -66,7 +69,7 @@ class CheckoutController extends Controller
             \Stripe\Stripe::setApiKey("sk_test_51HCQ8hG8ox0ZkhTA9IewxdJs3iX3gRAFbfRqxUWbe8OtlC0yE8FWhO3OVE208vgmAttTUZGuumBk47ygeLqs8d2V00xxeuxgiV");
             $token = $_POST['stripeToken'];
             $charge = Stripe::charges()->create([
-                'amount' =>  $this->getNumbers()->get('newTotal') / 100, // Amount to charge card
+                'amount' =>  getNumbers()->get('newTotal') / 100, // Amount to charge card
                 'currency' => 'usd',
                 'source' => $token,
                 'description' => 'Order',
@@ -80,6 +83,10 @@ class CheckoutController extends Controller
 
             $order = $this->addToOrdersTable($request, null);
             Mail::send(new OrderPlaced($order));
+
+            // Decrease quantity of all products in the cart when product is ordered
+            $this->decreaseQuantities();
+
             // Successfull
             // Destroy Cart Items
             Cart::instance('default')->destroy();
@@ -145,4 +152,24 @@ class CheckoutController extends Controller
     //         'newTotal' => $newTotal
     //     ]);
     // }
+
+    protected function decreaseQuantities()
+    {
+        foreach (Cart::content() as $item) {
+            $product = Product::find($item->model->id);
+
+            $product->update(['quantity' => $product->quantity - $item->qty]);
+        }
+    }
+
+    protected function productsNoLongerAvailible()
+    {
+        foreach (Cart::content() as $item) {
+            $product = Product::find($item->model->id);
+            if ($product->quantity < $item->qty) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

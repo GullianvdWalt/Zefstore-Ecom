@@ -70,6 +70,11 @@ class CartController extends Controller
             session()->flash('errors', collect(['Quantity can only be between 1 and 5']));
             return response()->json(['success' => false], 400);
         }
+        // Check if quantity selector is more than the stock quantity
+        if ($request->quantity > $request->productQuantity) {
+            session()->flash('errors', collect(['There are not enough items currently in stock.']));
+            return response()->json(['success' => false], 400);
+        }
 
         // AJAX request
         Cart::update($id, $request->quantity);
@@ -125,23 +130,5 @@ class CartController extends Controller
             ->associate('App\Product');
 
         return redirect()->route('cart.index')->with('success_message', 'Item has been Saved For Later!');
-    }
-
-
-    private function getNumbers()
-    {
-        $tax = config('cart.tax') / 100;
-        $discount = session()->get('voucher')['discount'] ?? 0;
-        $newSubtotal = ((Cart::subtotal()) - $discount);
-        $newTax = $newSubtotal * $tax;
-        $newTotal = $newSubtotal * (1 + $tax);
-
-        return collect([
-            'tax' => $tax,
-            'discount' => $discount,
-            'newSubtotal' => $newSubtotal,
-            'newTax' => $newTax,
-            'newTotal' => $newTotal
-        ]);
     }
 }
