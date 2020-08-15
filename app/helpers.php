@@ -1,6 +1,7 @@
 <?php
 
 use phpDocumentor\Reflection\Types\Float_;
+use Gloudemans\Shoppingcart\Facades\Cart;
 // Price
 function presentPrice($price)
 {
@@ -26,4 +27,26 @@ function remove_utf8_bom($text)
     $bom = pack('H*', 'EFBBBF');
     $text = preg_replace("/^$bom/", '', $text);
     return $text;
+}
+
+function getNumbers()
+{
+    $tax = config('cart.tax') / 100;
+    $discount = session()->get('voucher')['discount'] ?? 0;
+    $code = session()->get('voucher')['name'] ?? null;
+    $newSubtotal = ((Cart::subtotal()) - $discount);
+    if ($newSubtotal < 0) {
+        $newSubtotal = 0;
+    }
+    $newTax = $newSubtotal * $tax;
+    $newTotal = $newSubtotal * (1 + $tax);
+
+    return collect([
+        'tax' => $tax,
+        'discount' => $discount,
+        'code' => $code,
+        'newSubtotal' => $newSubtotal,
+        'newTax' => $newTax,
+        'newTotal' => $newTotal
+    ]);
 }

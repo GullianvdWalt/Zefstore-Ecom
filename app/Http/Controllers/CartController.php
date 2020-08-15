@@ -21,10 +21,10 @@ class CartController extends Controller
 
         return view('cart')->with([
             'mightAlsoLike' => $mightAlsoLike,
-            'discount' => $this->getNumbers()->get('discount'),
-            'newSubtotal' =>  $this->getNumbers()->get('newSubtotal'),
-            'newTax' =>  $this->getNumbers()->get('newTax'),
-            'newTotal' =>  $this->getNumbers()->get('newTotal'),
+            'discount' => getNumbers()->get('discount'),
+            'newSubtotal' =>  getNumbers()->get('newSubtotal'),
+            'newTax' =>  getNumbers()->get('newTax'),
+            'newTotal' =>  getNumbers()->get('newTotal'),
 
         ]);
     }
