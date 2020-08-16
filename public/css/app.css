@@ -38,6 +38,7 @@ header {
 .top-nav-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin: 0;
   height: 20%;
   width: 100%;
@@ -62,8 +63,7 @@ header {
 
 .menu-container,
 .nav-menu-right {
-  width: 30%;
-  margin: 0 10%;
+  width: 40%;
 }
 
 .menu-container li,
@@ -83,7 +83,7 @@ header {
   width: 100%;
   text-align: center;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 li {
@@ -1008,6 +1008,150 @@ a:hover {
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
+}
+
+.my-profile-container {
+  min-height: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.my-profile-nav {
+  width: 20%;
+}
+
+.my-profile-section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  text-align: left;
+}
+
+.my-profile-form-container {
+  margin-top: 20px;
+}
+
+.my-profile-form-container form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 30px;
+}
+
+.form-row {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.form-row input {
+  border: 1px solid slategray;
+  padding: 16px 10px;
+  border-radius: 5px;
+  width: 66.6%;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.my-profile-button {
+  width: 20%;
+}
+
+.login-container {
+  min-height: 800px;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+.login-container-left,
+.login-container-right {
+  width: 50%;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.login-form-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.login-form-row input {
+  margin-top: 10px;
+  padding: 16px 10px;
+  border-radius: 5px;
+  width: 70%;
+  font-size: 14px;
+}
+
+.login-form-bottom-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.login-button {
+  width: 50%;
+  padding: 16px 45px;
+  text-transform: uppercase;
+  color: #fff;
+  outline: none;
+  background-color: #ff0000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 10px;
+}
+
+.login-button:hover {
+  cursor: pointer;
+}
+
+.remember-me-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0 0 0 50px;
+  font-size: 16px;
+}
+
+.login-right-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.login-button-outlined {
+  width: 40%;
+  padding: 16px 35px;
+  text-transform: uppercase;
+  color: #ff0000;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-button-outlined:hover {
+  background-color: #ff0000;
+  color: #fff;
 }
 
 .breadcrums {
