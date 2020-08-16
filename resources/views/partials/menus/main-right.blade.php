@@ -4,9 +4,14 @@
     <li class="nav-menu-right-item"><a href="{{ route('login') }}" class="nav-menu-right-item-link">Login</a></li>
     @else
         <li class="nav-menu-right-item">
+            <a class="nav-menu-right-item-link dropdown-item" href="{{ route('users.edit') }}" >
+                My Account
+            </a>
+        </li>
+        <li class="nav-menu-right-item">
             <a class="nav-menu-right-item-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+                {{ ('Logout') }}
             </a>
         </li>
 

@@ -59,3 +59,17 @@ Route::get('/mailable', function () {
 
 // Search
 Route::get('/search', 'ShopController@search')->name('search');
+
+// Account
+Route::middleware('auth')->group(function () {
+    // My Profile
+    // Edit Edit My Profile Form
+    Route::get('/my-profile', 'UsersController@edit')->name('users.edit');
+    // Update Profile
+    Route::patch('/my-profile', 'UsersController@update')->name('users.update');
+    // My Profile Orders
+    // Get My Orders View
+    Route::get('/my-orders', 'OrdersController@index')->name('orders.index');
+    // Show Order Details
+    Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
+});
