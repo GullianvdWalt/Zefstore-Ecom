@@ -20,14 +20,12 @@
 .product-image-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .product-main-image {
     width: 500px;
     height: 500px;
     margin: 1rem 10%;
-    display: flex;
-    justify-content: center;
     align-items: center;
     border: 1px solid #979797;
     padding: 2rem;
@@ -62,6 +60,7 @@
 // Product Thumbnail Container
 .thumbnail-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     border: 1px solid lightgray;

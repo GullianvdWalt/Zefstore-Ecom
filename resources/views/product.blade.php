@@ -6,11 +6,11 @@
 
 @component('components.breadcrumbs')
 <a href="/" class="home-link">Home</a>
-<span class="material-icons">
+<span class="breadcrumb-separator material-icons">
     arrow_forward_ios
 </span>
 <span><a href="{{ route('shop.index') }}">Shop</a></span>
-<span class="material-icons">
+<span class="breadcrumb-separator material-icons">
     arrow_forward_ios
 </span>
 <span>{{ $product->name }}</span>
