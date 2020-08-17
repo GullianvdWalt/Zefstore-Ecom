@@ -1,4 +1,7 @@
 .breadcrums {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     text-align: left;
     padding: 2rem;
     background-color: lightgray;
@@ -6,4 +9,15 @@
 }
 .breadcrumb-separator {
     vertical-align: middle;
+}
+
+// Search
+.search-box {
+    padding: 10px 12px 10px 34px;
+    width: 400px;
+    max-width: 100%;
+    font-size: 14px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
 }
