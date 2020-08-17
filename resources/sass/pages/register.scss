@@ -1,0 +1,84 @@
+.register-container {
+    min-height: 800px;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.register-container-left,
+.register-container-right {
+    width: 50%;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+}
+.register-form-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 2rem 0;
+}
+.register-form-row input {
+    margin-top: 10px;
+    padding: 16px 10px;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 14px;
+}
+.register-form-row-bottom {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+}
+.register-button {
+    width: 40%;
+    padding: 16px 45px;
+    text-transform: uppercase;
+    color: #fff;
+    outline: none;
+    background-color: #ff0000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 10px;
+}
+.register-button:hover {
+    cursor: pointer;
+}
+.remember-me-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0 0 0 50px;
+    font-size: 16px;
+}
+// Login Right
+.login-right-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.login-button-outlined {
+    width: 40%;
+    padding: 16px 35px;
+    text-transform: uppercase;
+    color: #ff0000;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    text-align: center;
+}
+.login-button-outlined:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
