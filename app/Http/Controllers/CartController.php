@@ -123,12 +123,12 @@ class CartController extends Controller
         });
 
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already Saved For Later!');
+            return redirect()->route('cart.index')->with('success_message', 'Item is already in Wishlist!');
         }
 
         Cart::instance('wishlist')->add($item->id, $item->name, 1, $item->price)
             ->associate('App\Product');
 
-        return redirect()->route('cart.index')->with('success_message', 'Item has been Saved For Later!');
+        return redirect()->route('cart.index')->with('success_message', 'Item has been added to your Wishlist!');
     }
 }
