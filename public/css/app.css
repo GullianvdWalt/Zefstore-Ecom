@@ -670,9 +670,10 @@ aside {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%;
-  margin: 1.2rem 10%;
+  width: 70%;
+  margin: 1.2rem 15%;
   background-color: #fff;
+  border-radius: 15px;
   padding: 1rem;
   text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -687,35 +688,55 @@ aside {
 
 .cart-row-left {
   width: 50%;
-  margin: 0 5%;
+  margin: 0;
+  text-align: left;
 }
 
 .cart-row-right {
-  width: 30%;
-  margin: 0 5%;
+  width: 50%;
+  margin: 0;
   padding: 1rem;
+  text-align: left;
 }
 
-.cart-item-details-col {
-  display: flex;
-  flex-direction: column;
+.cart-image-container {
+  width: 50%;
 }
 
 .cart-img {
-  max-width: 250px;
-  max-height: 140px;
+  width: 80px;
+  height: 80px;
 }
 
-.quantity {
-  width: 40px;
-  font-size: 1rem;
+.cart-item-details-col {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .actions {
-  padding: 1rem;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-actions button {
+  font-size: 14px;
+}
+
+.cart-actions button .material-icons {
+  vertical-align: middle;
+}
+
+.cart-actions button:hover {
+  color: #ff0000;
 }
 
 .cart-wishlist,
@@ -736,17 +757,20 @@ aside {
   cursor: pointer;
 }
 
-.alert-message-container,
-.error-message {
-  margin: 2rem;
-  color: #ff0000;
-  border: 3px solid #ff0000;
-  border-radius: 20px;
-  width: 60%;
-  margin: 1rem 20%;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 800;
-  font-size: 1.4rem;
+.cart-quantity-container {
+  width: 35%;
+}
+
+.quantity {
+  width: 40px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+
+.cart-price {
+  width: 35%;
+  text-align: right;
 }
 
 a {
@@ -781,8 +805,8 @@ a:hover {
   flex-direction: row;
   justify-content: center;
   margin-top: 20px;
-  width: 80%;
-  margin: 0 10%;
+  width: 70%;
+  margin: 0 15%;
   background-color: #f0f0f0;
   margin-top: 1rem;
   border-radius: 15px;
@@ -798,7 +822,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: 50%;
-  justify-content: center;
+  text-align: left;
 }
 
 .subtotal-container,
@@ -810,7 +834,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  text-align: center;
+  text-align: left;
   width: 50%;
   margin: 1rem 25%;
   font-size: 1.3rem;
@@ -819,15 +843,15 @@ a:hover {
 .subtotal,
 .tax,
 .total {
-  vertical-align: middle;
+  text-align: left;
 }
 
 .cart-button-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 50%;
-  margin: 2rem 25%;
+  width: 70%;
+  margin: 2rem 15%;
   text-align: center;
 }
 
@@ -844,6 +868,7 @@ a:hover {
   width: 300px;
   height: 70px;
   padding: 1rem;
+  border-radius: 15px;
 }
 
 .continue-shopping-button-removed {
@@ -903,6 +928,45 @@ a:hover {
 
 .wishlist-empty-heading {
   color: gray;
+}
+
+.wishlist-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: left;
+  width: 70%;
+  margin: 2rem 15%;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.wishlist-product-image {
+  width: 80px;
+  height: 80px;
+}
+
+.wishlist-item-actions {
+  text-align: left;
+}
+
+.wishlist-action-button {
+  background: none;
+  outline: none;
+  border: none;
+  color: #333;
+}
+
+.wishlist-action-button:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.wishlist-action-button .material-icons {
+  vertical-align: middle;
 }
 
 .checkout-wrapper {
@@ -1413,5 +1477,18 @@ a:hover {
 .badge-dark {
   color: #fff;
   background-color: #343a40;
+}
+
+.alert-message-container,
+.error-message {
+  margin: 2rem;
+  color: #ff0000;
+  border: 3px solid #ff0000;
+  border-radius: 20px;
+  width: 40%;
+  margin: 3rem 30%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
 }
 
