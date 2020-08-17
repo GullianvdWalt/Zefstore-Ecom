@@ -2,6 +2,7 @@
 @section('title', 'Login')
 @section('content')
 
+{{-- Messages Start --}}
     <div class="message-container">
         <!-- Check for message -->
         @if (session()->has('success_message'))
@@ -20,6 +21,7 @@
         </div>
         @endif
     </div>
+{{-- Messages End --}}
 
 {{-- Login Container Start --}}
 <div class="login-container">
