@@ -64,50 +64,50 @@
                         <input type="text" id="address" name="address" class="checkout-form-input" value="{{ old('address') }}" required>
                     </div>
                     <div class="checkout-half-form-group">
-                        <div class="checkout-form-group">
+                        <div class="checkout-form-group-half">
                             <label for="city" class="checkout-half-form-label">City</label>
                             <input type="text" id="city" name="city" class="checkout-half-form-input" value="{{ old('city') }}" required>
                          </div>
-                        <div class="checkout-form-group">
+                        <div class="checkout-form-group-half">
                             <label for="province" class="checkout-half-form-label">Province</label>
                             <input type="text" id="province" name="province" class="checkout-half-form-input" value="{{ old('province') }}" required>
                          </div>
                     </div>
                     <div class="checkout-half-form-group">
-                        <div class="checkout-form-group">
+                        <div class="checkout-form-group-half">
                             <label for="postalCode" class="checkout-half-form-label">Postal Code</label>
                             <input type="text" id="postalCode" name="postalCode" class="checkout-half-form-input" value="{{ old('postalCode') }}" required>
                         </div>
-                        <div class="checkout-form-group">
+                        <div class="checkout-form-group-half">
                             <label for="phone" class="checkout-half-form-label">Phone</label>
                             <input type="text" id="phone" name="phone" class="checkout-half-form-input" value="{{ old('phone') }}" required>
                         </div>
                     </div>
 
                     <div class="space"></div>
+                    {{-- Payment Details Start --}}
+                    <div class="payment-details-container">
+                        <h3 class="checkout-form-heading"> Payment Details</h3>
 
-                    <h3 class="checkout-form-heading"> Payment Details</h3>
-
-                    <div class="checkout-form-group">
-                        <label for="name_on_card" class="checkout-form-label">Name On Card</label>
-                        <input type="text" id="name_on_card" name="name_on_card" class="checkout-form-input">
-                    </div>
-
-                    <div class="checkout-form-group">
-                        <label for="card-element">
-                        Credit or debit card
-                        </label>
-                        <div id="card-element" style="width: 30em" #stripecardelement id="card-element">
-                        <!-- A Stripe Element will be inserted here. -->
-
+                        <div class="checkout-form-group">
+                            <label for="name_on_card" class="checkout-form-label">Name On Card</label>
+                            <input type="text" id="name_on_card" name="name_on_card" class="checkout-form-input">
                         </div>
 
-                        <!-- Used to display form errors. -->
-                        <div id="card-errors" role="alert"></div>
+                        <div class="checkout-form-group">
+                            <label for="card-element" class="stripe-label">
+                            Credit or debit card
+                            </label>
+                            <div id="card-element" #stripecardelement class="stripe-container">
+                            <!-- A Stripe Element will be inserted here. -->
+                            </div>
+                            <!-- Used to display form errors. -->
+                            <div id="card-errors" role="alert"></div>
+                        </div>
                     </div>
                     <div class="space"></div>
 
-                    <button type="submit" class="checkout-form-button" id="complete-order">Complete Order</button>
+                   <div class="checkout-form-button-container"> <button type="submit" class="checkout-form-button" id="complete-order">Complete Order</button></div>
                 </form>
                 {{-- Checkout form Ends--}}
             </div>
@@ -118,6 +118,7 @@
             <h2 class="checkout-order-heading">Your Order</h2>
                 @foreach (Cart::content() as $item)
                 {{-- Checkout  Product Details Row Start --}}
+                <hr class="checkout-order-line">
                 <div class="checkout-order-row">
                     <div class="checkout-order-product-image-container">
                         <img src="{{ productImage($item->model->image_url) }}" alt="item" class="checkout-order-product-image">
@@ -133,12 +134,12 @@
                 </div>
                 @endforeach
                     {{-- Checkout  Product Details Row End --}}
-
+                <hr class="checkout-order-line">
                     {{-- Checkout Order Price Row Start --}}
                  <div class="checkout-order-price-row">
                     <div class="checkout-order-subotal-container">
                         <p class="checkout-subtotal-label">Subtotal</p>
-                        <p class="checkput-subotal-value">{{ 'R'.((DOUBLE)(Cart::subtotal())) }}</p>
+                        <p class="checkput-subotal-value">{{ presentPrice(Cart::subtotal()) }}</p>
                     </div>
                       @if (session()->has('voucher'))
                     <div class="voucher-container">
@@ -155,12 +156,12 @@
                         <p class="checkout-tax-value">{{ presentPrice($newTax) }}</p>
                     </div>
                     <div class="checkout-order-total-container">
-                        <p class="checkout-total-label">Total</p>
-                        <p class="checkout-total-value"> {{ presentPrice($newTotal) }} </p>
+                        <p class="checkout-total-label"><b>Total</b></p>
+                        <p class="checkout-total-value"> <b>{{ presentPrice($newTotal) }}</b> </p>
                     </div>
                 </div>
+                <hr class="checkout-order-line">
                      {{-- Checkout Orders Price Row End --}}
-
         </div>
          {{-- Checkout Order Section Ends --}}
     </div>

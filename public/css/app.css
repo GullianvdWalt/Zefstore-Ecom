@@ -991,7 +991,12 @@ a:hover {
   flex-direction: column;
   margin: 1rem;
   width: 50%;
-  padding: 2rem;
+  padding: 1rem;
+}
+
+.checkout-form-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .checkout-form {
@@ -999,19 +1004,68 @@ a:hover {
   flex-direction: column;
   text-align: left;
   width: 100%;
-  padding: 1rem;
   text-align: left;
 }
 
 .checkout-form-group {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  width: 100%;
+  margin: 1rem 0;
 }
 
 .checkout-half-form-group {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.checkout-form-group-half {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.checkout-form-input {
+  margin-top: 10px;
+  padding: 16px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+}
+
+.checkout-half-form-input {
+  margin-top: 10px;
+  padding: 16px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+}
+
+.checkout-form-button-container {
+  margin: 20px 0;
+}
+
+.checkout-form-button {
+  width: 50%;
+  padding: 16px 45px;
+  text-transform: uppercase;
+  color: #fff;
+  outline: none;
+  background-color: #ff0000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 10px;
+}
+
+.checkout-form-button:hover {
+  cursor: pointer;
 }
 
 .checkout-form-button:disabled {
@@ -1019,11 +1073,24 @@ a:hover {
   cursor: not-allowed;
 }
 
+.payment-details-container {
+  margin: 40px 0;
+}
+
+.stripe-container {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.stripe-label {
+  margin-bottom: 10px;
+}
+
 .StripeElement {
   background-color: white;
   padding: 1rem;
-  margin: 0;
-  border: 1px solid #ccc;
+  margin: 1 0;
 }
 
 .StripeElement--focus {
@@ -1042,10 +1109,86 @@ a:hover {
   color: #fa755a;
 }
 
+.checkout-order-row {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+  justify-content: space-between;
+  padding: 2rem;
+  font-size: 16px;
+}
+
+.checkout-order-price-row {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  justify-content: space-between;
+  padding: 2rem;
+  font-size: 18px;
+}
+
+.checkout-order-line {
+  border: 1px solid #ff0000;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.checkout-order-product-image {
+  width: 80px;
+  height: 80px;
+}
+
+.checkout-order-product-details-container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout-order-product-details {
+  color: #919191;
+}
+
+.checkout-product-quantity {
+  border: 1px solid #919191;
+  padding: 5px 14px;
+  margin-right: 5px;
+}
+
+.checkout-order-subotal-container,
+.voucher-container,
+.new-subtotal-container,
+.checkout-order-tax-container,
+.checkout-order-total-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.voucher-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.voucher-value {
+  text-align: left;
+}
+
+.new-subtotal-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-align: left;
+}
+
 .thank-you-section {
   text-align: center;
   min-height: 800px;
-  margin: 1rem;
+  margin: 2rem;
   padding: 1rem;
 }
 
@@ -1060,17 +1203,21 @@ a:hover {
 
 .thankyou-home-button-container {
   width: 60%;
-  margin: 2rem 20%;
+  margin: 4rem 20%;
 }
 
 .thankyou-home-button {
   background-color: #ff0000;
   border-radius: 15px;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
+}
+
+.thankyou-home-button:hover {
+  color: #fff;
 }
 
 .my-profile-container {
@@ -1086,11 +1233,32 @@ a:hover {
   width: 20%;
 }
 
+.my-profile-menu {
+  display: block;
+}
+
+.active {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.my-orders-menu-item-link {
+  font-size: 18px;
+}
+
 .my-profile-section {
   display: flex;
   flex-direction: column;
   width: 80%;
   text-align: left;
+}
+
+.my-profile-heading-line {
+  border: 1px solid #ff0000;
+  width: 80%;
+  margin: 0 20% 0 0;
+  border-radius: 20px;
 }
 
 .my-profile-form-container {
@@ -1123,6 +1291,97 @@ a:hover {
 
 .my-profile-button {
   width: 20%;
+  padding: 16px 45px;
+  text-transform: uppercase;
+  color: #fff;
+  outline: none;
+  background-color: #ff0000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 10px;
+}
+
+.my-profile-button:hover {
+  cursor: pointer;
+}
+
+.my-orders-section {
+  min-height: 800px;
+  display: flex;
+  flex-direction: row;
+}
+
+.my-orders-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.my-orders-heading-line {
+  border: 1px solid #ff0000;
+  width: 60%;
+  margin: 0 20% 0 0;
+  border-radius: 20px;
+}
+
+.my-order-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dddddd;
+  width: 60%;
+  margin: 4rem 40% 4rem 0;
+}
+
+.my-order-details-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #f6f6f6;
+  border: 1px solid #dddddd;
+}
+
+.my-order-details-heading-left,
+.my-order-details-heading-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.my-order-details-heading-left {
+  width: 60%;
+}
+
+.my-order-details-heading-right {
+  width: 40%;
+}
+
+.my-order-details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-order-details-body {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-evenly;
+  text-align: left;
+}
+
+.product-order-image {
+  width: 150px;
+  height: 150xp;
+}
+
+.my-order-details-body-product-details {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .login-container {
@@ -1271,6 +1530,7 @@ a:hover {
 
 .register-button:hover {
   cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .remember-me-container {

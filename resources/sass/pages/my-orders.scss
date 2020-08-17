@@ -1,0 +1,64 @@
+.my-orders-section {
+    min-height: 800px;
+    display: flex;
+    flex-direction: row;
+}
+.my-orders-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.my-orders-heading-line {
+    border: 1px solid #ff0000;
+    width: 60%;
+    margin: 0 20% 0 0;
+    border-radius: 20px;
+}
+.my-order-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dddddd;
+    width: 60%;
+    margin: 4rem 40% 4rem 0;
+}
+.my-order-details-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #f6f6f6;
+    border: 1px solid #dddddd;
+}
+.my-order-details-heading-left,
+.my-order-details-heading-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.my-order-details-heading-left {
+    width: 60%;
+}
+.my-order-details-heading-right {
+    width: 40%;
+}
+.my-order-details-col {
+    display: flex;
+    flex-direction: column;
+}
+.my-order-details-body {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    justify-content: space-evenly;
+    text-align: left;
+}
+.product-order-image {
+    width: 150px;
+    height: 150xp;
+}
+.my-order-details-body-product-details {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}

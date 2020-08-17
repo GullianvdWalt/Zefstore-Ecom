@@ -1,7 +1,7 @@
 .thank-you-section {
     text-align: center;
     min-height: 800px;
-    margin: 1rem;
+    margin: 2rem;
     padding: 1rem;
 }
 .thankyou-header {
@@ -13,14 +13,17 @@
 }
 .thankyou-home-button-container {
     width: 60%;
-    margin: 2rem 20%;
+    margin: 4rem 20%;
 }
 .thankyou-home-button {
     background-color: #ff0000;
     border-radius: 15px;
     color: #fff;
-    padding: 1rem;
+    padding: 1rem 2rem;
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
+}
+.thankyou-home-button:hover {
+    color: #fff;
 }

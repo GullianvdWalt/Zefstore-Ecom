@@ -18,38 +18,94 @@
     flex-direction: column;
     margin: 1rem;
     width: 50%;
-    padding: 2rem;
+    padding: 1rem;
 }
 // Checkout Form Styles Start
+.checkout-form-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .checkout-form {
     display: flex;
     flex-direction: column;
     text-align: left;
     width: 100%;
-    padding: 1rem;
     text-align: left;
 }
 .checkout-form-group {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
 }
 .checkout-half-form-group {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0;
+}
+.checkout-form-group-half {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: left;
+}
+.checkout-form-input {
+    margin-top: 10px;
+    padding: 16px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+}
+.checkout-half-form-input {
+    margin-top: 10px;
+    padding: 16px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+}
+.checkout-form-button-container {
+    margin: 20px 0;
 }
 .checkout-form-button {
+    width: 50%;
+    padding: 16px 45px;
+    text-transform: uppercase;
+    color: #fff;
+    outline: none;
+    background-color: #ff0000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 10px;
+}
+.checkout-form-button:hover {
+    cursor: pointer;
 }
 .checkout-form-button:disabled {
     background-color: lightgrey;
     cursor: not-allowed;
 }
+.payment-details-container {
+    margin: 40px 0;
+}
 // Stripe
+.stripe-container {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+.stripe-label {
+    margin-bottom: 10px;
+}
 .StripeElement {
     background-color: white;
     padding: 1rem;
-    margin: 0;
-    border: 1px solid #ccc;
+    margin: 1 0;
 }
 
 .StripeElement--focus {
@@ -66,4 +122,72 @@
 
 #card-errors {
     color: #fa755a;
+}
+
+// Style Checkout Order Section Right
+.checkout-order-row {
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 0;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 16px;
+}
+.checkout-order-price-row {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 18px;
+}
+.checkout-order-line {
+    border: 1px solid #ff0000;
+    width: 100%;
+    border-radius: 20px;
+}
+.checkout-order-product-image {
+    width: 80px;
+    height: 80px;
+}
+.checkout-order-product-details-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.checkout-order-product-details {
+    color: #919191;
+}
+.checkout-product-quantity {
+    border: 1px solid #919191;
+    padding: 5px 14px;
+    margin-right: 5px;
+}
+.checkout-order-subotal-container,
+.voucher-container,
+.new-subtotal-container,
+.checkout-order-tax-container,
+.checkout-order-total-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.voucher-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-align: left;
+}
+.voucher-value {
+    text-align: left;
+}
+.new-subtotal-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-align: left;
 }
