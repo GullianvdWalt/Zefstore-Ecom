@@ -1,0 +1,13 @@
+// Messages
+.alert-message-container,
+.error-message {
+    margin: 2rem;
+    color: #ff0000;
+    border: 3px solid #ff0000;
+    border-radius: 20px;
+    width: 40%;
+    margin: 3rem 30%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+}

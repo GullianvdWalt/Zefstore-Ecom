@@ -48,14 +48,16 @@
         </div>
         @foreach (Cart::content() as $item)
         <div class="cart-item-container">
+        {{-- Cart Left Start --}}
             <div class="cart-row-left">
                 {{-- Model is the Product Model --}}
-                <div> <a href="{{route('shop.show', $item->model->slug)}}"><img src="{{ productImage($item->model->image_url) }}" alt="item" class="cart-img"></a></div>
+                <div class="cart-image-container"> <a href="{{route('shop.show', $item->model->slug)}}"><img src="{{ productImage($item->model->image_url) }}" alt="item" class="cart-img"></a></div>
                 <div class="cart-item-details-col">
                     <div class="cart-product-name"><a href="{{route('shop.show', $item->model->slug)}}">{{$item->model->name}}</a></div>
                     <div class="cart-product-details">{{ $item->model->details }}</div>
                 </div>
             </div>
+        {{-- Cart Right Start --}}
             <div class="cart-row-right">
                 <div class="actions">
                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST" class="cart-actions">
@@ -77,7 +79,7 @@
                         @endfor
                     </select>
                 </div>
-                <div class="cart-price">{{ presentPrice($item->subtotal) }}</div>
+                <div class="cart-price"><h4><strong>{{ presentPrice($item->subtotal) }}</strong></h4></div>
             </div>
         </div>
         @endforeach
@@ -157,10 +159,9 @@
 <div class="wishlist-container">
 @foreach (Cart::instance('wishlist')->content() as $item)
 {{-- Wishlist product row starts --}}
-<div class="wishlist-item-row">
     <div class="wishlist-item-image">
 {{-- Wishlist Product Details --}}
-        <a href="{{ route('shop.show', $item->model->slug) }}"><img src="{{ asset('assets/img/product-images/'.$item->model->slug.'.jpg')}}" alt="product" class="wishlist-product-image"></a>
+        <a href="{{ route('shop.show', $item->model->slug) }}"><img src="{{ productImage($item->model->image_url) }}" alt="product" class="wishlist-product-image"></a>
     </div>
     <div class="wishlist-item-details">
         <div class="wishlist-item-product-name"><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a></div>
@@ -170,24 +171,19 @@
     <div class="wishlist-item-actions">
             {{-- Remove Item from wishlist --}}
             <form action="{{ route('wishlist.destroy', $item->rowId) }}" method="POST">
-
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-
-                <button type="submit" class="wishlist-actions">Remove</button>
+                <button type="submit" title="Remove Item" class="wishlist-action-button"><i class="material-icons">delete</i>Remove</button>
 
             </form>
             {{-- Add Wishlist item to cart --}}
             <form action="{{ route('wishlist.switchToCart', $item->rowId) }}" method="POST">
-
                  {{ csrf_field() }}
-
-                <button type="submit" class="wishlist-actions">Move to Cart</button>
+                <button type="submit" class="wishlist-action-button"><i class="material-icons">shopping_cart</i> Move to Cart</button>
             </form>
     </div>
     {{-- Wishlist Actions Ends --}}
-    <div class="wishlist-item-price">{{ $item->model->presentPrice() }}</div>
-</div>
+    <div class="wishlist-item-price"><h4><strong>{{ $item->model->presentPrice() }}</strong></h4></div>
 @endforeach
 </div>
 
