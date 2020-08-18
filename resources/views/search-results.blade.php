@@ -31,8 +31,12 @@
     </div>
 <!-- Search Container Start -->
 <div class="search-container">
-        <h2> Search Results </h2>
-        <p>{{$products->total()}} result(s) for '{{request()->input('query') }}'</p>
+
+        <h2 class="search-results-heading"> Search Results </h2>
+        <div class="search-results-container">
+            <p clas="search-results-container">{{$products->total()}} result(s) for '{{request()->input('query') }}'</p>
+        </div>
+        {{-- Search Results Table Start --}}
         <table class="search-results-table">
                     <thead>
                         <tr>
@@ -45,7 +49,7 @@
                     <tbody>
                         @foreach ($products as $product)
                             <tr>
-                                <th><a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a></th>
+                                <td><a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a></td>
                                 <td>{{ $product->details }}</td>
                                 <td>{!! \Illuminate\Support\Str::limit($product->description, 80) !!}</td>
                                 <td>{{ $product->presentPrice() }}</td>
@@ -53,6 +57,7 @@
                         @endforeach
                     </tbody>
         </table>
+        {{-- Search Results Table End --}}
 <div class="pagination-container"> <div class="pagination">     {{ $products->appends(request()->input())->links() }}</div></div>
 </div><!-- Search Container End -->
 

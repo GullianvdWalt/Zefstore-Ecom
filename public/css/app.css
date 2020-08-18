@@ -555,9 +555,7 @@ aside {
 .main-image {
   height: 80%;
   width: 80%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
 
 .product-images-container {
@@ -1567,6 +1565,44 @@ a:hover {
 .login-button-outlined:hover {
   background-color: #ff0000;
   color: #fff;
+}
+
+.search-container {
+  min-height: 800px;
+  margin: 4rem;
+}
+
+.search-results-heading {
+  font-size: 24px;
+}
+
+.search-results-container {
+  width: 70%;
+  margin: 2rem 15% 2rem 0;
+  text-align: left;
+}
+
+.search-results-table {
+  width: 70%;
+  margin: 2rem 15% 1rem 0;
+  text-align: center;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+.search-results-table thead {
+  background-color: darkgray;
+}
+
+th {
+  padding: 1rem;
+}
+
+tr {
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem;
 }
 
 .breadcrums {
