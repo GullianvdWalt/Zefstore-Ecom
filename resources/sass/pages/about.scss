@@ -1,0 +1,23 @@
+.about-section {
+    min-height: 800px;
+    text-align: center;
+    margin: 1rem;
+}
+.about-heading {
+    color: #000000;
+}
+.about-heading-line {
+    width: 50%;
+    margin: 0 25%;
+    border: 2px solid #ff0000;
+}
+.about-body-container {
+    margin: 4rem 0 2rem 0;
+}
+.about-content {
+    font-size: 18px;
+}
+.about-content span a {
+    color: #4fabed;
+    text-decoration-line: underline;
+}

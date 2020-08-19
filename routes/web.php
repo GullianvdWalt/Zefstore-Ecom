@@ -73,3 +73,6 @@ Route::middleware('auth')->group(function () {
     // Show Order Details
     Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
 });
+
+// About
+Route::get('/about', 'AboutController@index')->name('about.index');
