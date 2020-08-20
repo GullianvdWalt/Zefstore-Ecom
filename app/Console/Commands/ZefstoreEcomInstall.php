@@ -12,7 +12,7 @@ class ZefstoreEcomInstall extends Command
      *
      * @var string
      */
-    protected $signature = 'zefstoreecom:install {--force : Do not ask for user confirmation}';
+    protected $signature = 'zefstoreecom:install {--force : Don\'t ask for user confirmation}';
 
     /**
      * The console command description.
