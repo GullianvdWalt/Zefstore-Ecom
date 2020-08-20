@@ -57,10 +57,12 @@ class ZefstoreEcomInstall extends Command
 
         $this->call('migrate:fresh', [
             '--seed' => true,
+            '--force' => true,
         ]);
 
         $this->call('db:seed', [
             '--class' => 'VoyagerDatabaseSeeder',
+            '--force' => true,
         ]);
 
         $this->call('db:seed', [
