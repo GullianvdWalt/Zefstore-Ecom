@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Database\Seeder;
+use TCG\Voyager\Models\DataType;
+
 class DataTypesTableSeederCustom extends Seeder
 {
     /**
