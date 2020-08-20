@@ -34,7 +34,7 @@
         </div>
         <!-- Top-nav-container-end -->
         <!-- Hero Section Start -->
-        <div class="hero-container" style="background-image: url('{{asset('assets/img/head.jpg')}}');">
+        <div class="hero-container">
             <div class="hero-heading">
                 <h1>Welcome To <br> The <span>Zef</span> Store</h1>
             </div>

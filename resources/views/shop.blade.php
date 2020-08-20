@@ -78,7 +78,7 @@
                 <div class="spacer"></div>
                 {{-- Pagination --}}
             </div>
-            <div class="pagination-container"> <div class="pagination">     {{ $products->appends(request()->input())->links() }}</div></div>
+            <div class="pagination-container">     {{ $products->appends(request()->input())->links() }}</div>
     </div>
 </div>
 
