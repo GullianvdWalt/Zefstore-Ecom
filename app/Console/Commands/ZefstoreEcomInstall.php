@@ -49,7 +49,6 @@ class ZefstoreEcomInstall extends Command
 
     protected function proceed()
     {
-        File::delete(public_path('storage/products/dummy'));
         $this->callSilent('storage:link');
         $copySuccess = File::copyDirectory(public_path('assets/product-images'), public_path('storage/products/dummy'));
         if ($copySuccess) {
