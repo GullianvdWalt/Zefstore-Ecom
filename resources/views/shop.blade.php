@@ -31,9 +31,10 @@
 </div>
 
 <div class="shop-container">
-    <aside class="category-nav">
+    <aside class="category-nav" id="categoryNav">
         <h3 class="category-header">By Category</h3>
-        <ul class="categories-menu">
+        <div class="category-menu"><a href="#" id="showCategories" onclick="myFunction()"><img src="{{asset('assets/img/icons/menu.png')}}" alt="Menu"></a></div>
+        <ul class="categories-menu" id="categoriesMenu">
         @foreach ($categories as $category)
             <li class="{{ setActiveCategory($category->slug) }}" class="categories-menu-item">
                 <a href="{{ route('shop.index',['category'=>$category->slug]) }}" class="categories-menu-item-link">
@@ -82,4 +83,18 @@
     </div>
 </div>
 
+@endsection
+
+@section('extra-js')
+<script>
+function myFunction(){
+
+    var menu = document.getElementById("categoriesMenu");
+    if(menu.className === "categories-menu"){
+        menu.className += " responsive";
+    }else{
+        menu.className = "categories-menu";
+    }
+}
+</script>
 @endsection

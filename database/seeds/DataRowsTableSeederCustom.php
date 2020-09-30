@@ -217,9 +217,9 @@ class DataRowsTableSeederCustom extends Seeder
         |--------------------------------------------------------------------------
         */
 
-        $couponDataType = DataType::where('slug', 'coupons')->firstOrFail();
+        $voucherDataType = DataType::where('slug', 'vouchers')->firstOrFail();
 
-        $dataRow = $this->dataRow($couponDataType, 'id');
+        $dataRow = $this->dataRow($voucherDataType, 'id');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'hidden',
@@ -235,7 +235,7 @@ class DataRowsTableSeederCustom extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($couponDataType, 'code');
+        $dataRow = $this->dataRow($voucherDataType, 'code');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
@@ -251,7 +251,7 @@ class DataRowsTableSeederCustom extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($couponDataType, 'type');
+        $dataRow = $this->dataRow($voucherDataType, 'type');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'select_dropdown',
@@ -267,7 +267,7 @@ class DataRowsTableSeederCustom extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($couponDataType, 'value');
+        $dataRow = $this->dataRow($voucherDataType, 'value');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
@@ -283,7 +283,7 @@ class DataRowsTableSeederCustom extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($couponDataType, 'percent_off');
+        $dataRow = $this->dataRow($voucherDataType, 'percent_off');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
@@ -299,7 +299,7 @@ class DataRowsTableSeederCustom extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($couponDataType, 'created_at');
+        $dataRow = $this->dataRow($voucherDataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
@@ -315,7 +315,7 @@ class DataRowsTableSeederCustom extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($couponDataType, 'updated_at');
+        $dataRow = $this->dataRow($voucherDataType, 'updated_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',

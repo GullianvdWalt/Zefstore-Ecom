@@ -20,7 +20,7 @@
     <!-- Header Start -->
     <header>
         <!-- Top-nav-container-Start -->
-        <div class="top-nav-container" style="background-image: url('{{asset('assets/img/carbon-background.png')}}');">
+        <div class="top-nav-container" style="background-image: url('{{asset('assets/img/carbon-background.png')}}')">
             <div class="logo"><img src="assets/img/ZefStoreLogoMedium.png" alt="logo" class="logo-image"></div>
             <!-- Nav Start -->
             <div class="nav-top-container">

@@ -222,7 +222,7 @@ span {
 
     /* Background image is fixed in the viewport so that it doesn't move when
      the content's height is greater than the image's height */
-    //background-attachment: fixed;
+    background-attachment: fixed;
 
     /* This is what makes the background image rescale based
      on the container's size */
@@ -277,6 +277,9 @@ h1 {
 .product-image .main-image {
     width: 150px;
     height: 150px;
+}
+.product-price p {
+    font-size: 1rem;
 }
 .product-name {
     color: black;
@@ -343,6 +346,28 @@ footer li a:hover {
 // Spacer Div
 .spacer {
     margin-bottom: 30px;
+}
+
+// ########### Responsive Start ##########
+@media only screen and (max-width: 1220px) {
+    .home-featured-products-container {
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px 40px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .menu-nav-links,
+    .nav-menu-right-items {
+        justify-content: center;
+        margin: 1rem;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .hero-container {
+        background-attachment: scroll;
+    }
 }
 
 // Pages

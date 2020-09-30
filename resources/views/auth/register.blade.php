@@ -34,7 +34,7 @@
                 {{ csrf_field() }}
             <div class="register-form-row">
                 <label for="fullName" class="register-form-label"> Name & Surname</label>
-                <input type="text" id="fullname" name="fullName" class="register-form-input"  value="{{ old('fullName') }}" required autofocus>
+                <input type="text" id="fullname" name="name" class="register-form-input"  value="{{ old('fullName') }}" required autofocus>
             </div>
             <div class="register-form-row">
                 <label for="email" class="register-form-label"> Email </label>
